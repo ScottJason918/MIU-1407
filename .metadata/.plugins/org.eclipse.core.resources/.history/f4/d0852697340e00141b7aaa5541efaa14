@@ -1,5 +1,15 @@
+//Creating Window
+var mainWindow = Ti.UI.createWindow({
+	title: "About Me!",
+	backgroundColor: "#BDBDBD"
+});
+
+//Making Nav Window
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
 var aboutMe = [
-	{number: "Question 1",
+	{number : "Question 1",
 	question: "What is your name?",
 	answer: "Jason Scott"},
 	{number : "Question 2",
@@ -37,14 +47,52 @@ var aboutMe = [
 	answer: "Universal Orlando, Wizarding World attractions"},
 ];
 
-var nextWin = function(){
-	var nextWindow = Ti.UI.createWindow ({
-		background: "#BDBDBD",
-		title: "Questions!"
+var mainWindow = Ti.UI.createWindow({
+	
+});
+var questionTable = Ti.UI.createTableView({
+	data: aboutMe,
+	top: 0
+});
+
+var aboutSection = Ti.UI.createTableViewSection({
+	headerTitle: "About Me Questions",
+	footerTitle: "Complete with Answers!"
+});
+
+var aboutAnswers = function(){
+	var answerWindow = Ti.UI.createWindow({
+		title: this.question,
+		backgroundColor: "BDBDBD",
 	});
+
+	
+	var answerText = Ti.UI.createLabel({
+		text: this.answer,
+		font: {fontSize: 12, fontFamily: "Arial"},
+		left: 10,
+		right: 10
+	});
+	
+	answerWindow.add(answerText);
+
+	navWindow.openWindow(answerWindow);
 };
 
-console.log(nextWin);
+for(var i = 0, j= aboutMe.length; i<j; i++){
+	var aRow = Ti.UI.createTableViewRow({
+		title: aboutMe[i].number,
+		quest: aboutMe[i].question,
+		hasChild: true,
+		hasDetail: true
+		
+	});
+	aboutSection.add(aRow);
+	aRow.addEventListener("click", aboutAnswers);
+};
 
-button.addEventListener("click", nextWin);
 
+questionTable.add(aboutSection);
+mainWindow.add(questionTable);
+var loadfile = require("json");
+navWindow.open(mainWindow);

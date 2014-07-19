@@ -1,5 +1,5 @@
 var aboutMe = [
-	{number: "Question 1",
+	{number : "Question 1",
 	question: "What is your name?",
 	answer: "Jason Scott"},
 	{number : "Question 2",
@@ -18,7 +18,7 @@ var aboutMe = [
 	question: "How comfortable are you with Titanium?",
 	answer: "Only slightly comfortable"},
 	{number: "Question 7",
-	question: "What is your favorite video (game at the moment)?",
+	question "What is your favorite video game (at the moment)?",
 	answer: "Counter Strike GO or League of Legends"},
 	{number: "Question 8",
 	question: "What is your favorite movie of all time?",
@@ -37,14 +37,4 @@ var aboutMe = [
 	answer: "Universal Orlando, Wizarding World attractions"},
 ];
 
-var nextWin = function(){
-	var nextWindow = Ti.UI.createWindow ({
-		background: "#BDBDBD",
-		title: "Questions!"
-	});
-};
-
-console.log(nextWin);
-
-button.addEventListener("click", nextWin);
-
+var 

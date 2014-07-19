@@ -1,0 +1,25 @@
+//Creating Window
+var mainWindow = Ti.UI.createWindow({
+	title: "About Me!",
+	backgroundColor: "#BDBDBD"
+});
+
+//Making Nav Window
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var questionTable = Ti.UI.createtableView({
+	data: aboutMe,
+	top: 0
+});
+
+var aboutSection = Ti.UI.createtableViewSection({
+	headerTitle: "About Me Questions",
+	footerTitle: "Complete with Answers!"
+});
+
+questionTable.add(aboutSection);
+mainWindow.add(questionTable);
+var loadfile = require("json");
+navWindow.open();

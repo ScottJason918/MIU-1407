@@ -1,5 +1,5 @@
 var aboutMe = [
-	{number: "Question 1",
+	{number : "Question 1",
 	question: "What is your name?",
 	answer: "Jason Scott"},
 	{number : "Question 2",
@@ -37,14 +37,4 @@ var aboutMe = [
 	answer: "Universal Orlando, Wizarding World attractions"},
 ];
 
-var nextWin = function(){
-	var nextWindow = Ti.UI.createWindow ({
-		background: "#BDBDBD",
-		title: "Questions!"
-	});
-};
-
-console.log(nextWin);
-
-button.addEventListener("click", nextWin);
-
+var 
