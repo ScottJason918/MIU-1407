@@ -1,0 +1,20 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#ffffff",
+	title: "Movie App"
+});
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var view = Ti.UI.createView({
+	height: "100%",
+	width: "100%",
+});
+var text = Ti.UI.createLabel({
+	text: "Click me"
+});
+view.add(text);
+mainWindow.add(view);
+navWindow.open();
+
+var loadFile = require("data");
