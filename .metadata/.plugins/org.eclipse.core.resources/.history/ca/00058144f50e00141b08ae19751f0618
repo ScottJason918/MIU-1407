@@ -1,0 +1,25 @@
+
+//Making Nav Window
+var mainWindow = Ti.UI.createWindow({
+	title: "About Me!",
+	color: "#BDBDBD"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+
+var button = Ti.UI.createView({
+	backgroundColor: "#ffffff",
+	top: "50%",
+	height: "50%",
+	width: "80%",
+	align: "center"
+});
+
+//var loadfile = require("json");
+
+mainWindow.add(button);
+navWindow.open();
+

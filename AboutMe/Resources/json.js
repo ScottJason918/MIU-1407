@@ -44,7 +44,7 @@ var nextWin = function(){
 	});
 };
 
-console.log(nextWin);
+
 
 button.addEventListener("click", nextWin);
 
