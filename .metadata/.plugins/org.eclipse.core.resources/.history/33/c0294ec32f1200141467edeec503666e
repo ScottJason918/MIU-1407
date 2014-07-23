@@ -6,6 +6,13 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: mainWindow
 });
 
+var view = Ti.UI.createView({
+	height: "100%",
+	width: "100%",
+	text: "Click me"
+});
+
+mainWindow.add(view);
 navWindow.open();
 
 var loadFile = require("data");

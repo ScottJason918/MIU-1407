@@ -1,0 +1,9 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#ffffff"
+});
+var navWindow = Ti.UI.createNavigationWindow({
+	window: mainWindow
+});
+
+
+navWindow.open();
