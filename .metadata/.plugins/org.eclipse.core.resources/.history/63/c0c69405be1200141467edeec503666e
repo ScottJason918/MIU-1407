@@ -1,0 +1,17 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#c81b1b",
+	title: "Movie App"
+});
+
+var logo = Ti.UI.createImageView({
+	image: "Pictures/Logo.jpg",
+	top: 0
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+navWindow.open();
+mainWindow.add(logo);
+var loadFile = require("data");

@@ -1,0 +1,31 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#c81b1b",
+	title: "Movie App"
+});
+
+var logo = Ti.UI.createImageView({
+	image: "Pictures/Logo.jpg",
+	top: 0
+});
+
+var login = Ti.UI.createView({
+	backgroundColor: "#e9e6e6",
+	top: logo.top+logo.height+100,
+	height: 45,
+	left: 15,
+	right: 15
+});
+var password = Ti.UI.createView({
+	backgroundColor: "#e9e6e6",
+	top: login.bottom + 5,
+	height: 45
+	
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+navWindow.open();
+mainWindow.add(logo, login);
+var loadFile = require("data");
