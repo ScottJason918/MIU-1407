@@ -1,0 +1,97 @@
+Titanium.UI.setBackgroundColor("#000");
+
+var jimCroce = [
+	{title: "Operator", description: "The song is about the narrator\'s conversation with a telephone operator and trying to find the telephone number of his former lover who has moved to Los Angeles with his former best friend. The narrator wants to confront his former lover by telling her he is over her leaving him. At one point during the call, the operator gives the speaker his ex-lover\'s phone number, but he is so overcome with emotion that he cannot read the number the operator just gave him (presumably due to the tears in his eyes). As the song continues, the narrator realizes he is not over her and decides not to call her."}, 
+	{title: "Bad Bad Leeroy Brown", description: "The song is about a man from the South Side of Chicago who, due to his size and attitude, has a reputation as the \"baddest man in the whole damn town.\" One day, in a bar, he makes a pass at a pretty, married woman, whose jealous husband proceeds to beat Leroy brutally in the ensuing fight."}, 
+	{title: "Time in a Bottle", description: "Croce wrote the lyrics after his wife Ingrid told him she was pregnant with his son, Adrian, in December 1970. It appeared on his 1972 ABC debut album You Don't Mess Around with Jim. ABC originally did not intend to release the song as a single; but when Croce was killed in a plane crash in September 1973, the song\'s lyrics, dealing with immortality and the wish to have more time, came across as if he had had a presentiment."}, 
+	{title: "Have to Say I Love You in a Song", description: "Croce wrote the song in early 1973 when he arrived home and got into a disagreement with his wife, Ingrid. Instead of arguing with her, she has stated that Croce \"went downstairs, and he started to play, like he always did when he wrote...the next morning, he came up early in the morning and sang it to me.\""}];
+	
+var cageTheElephant = [
+	{title: "Shake Me Down", description: "In the music video, directed by Isaac Rentz, a middle-aged jogger relives vivid memories of his life through a surreal, nostalgic journey. At the end of the video, the man sees his deceased friends and family members, including his wife. The video then shows that the man was dreaming the entire time, and died in his sleep. As his wife cries by his side, the video fades with a blurred view of the man standing next to the shore at a beach"}, 
+	{title: "In One Ear", description: "This song has a pretty straight forward meaning. Which is people saying that they can\'t make it or do anything when they haven\'t even give them a chance. They also make it clear that they\'re in it for themselves and not for anyone or anything else."}, 
+	{title: "Ain\'t No Rest for the Wicked", description: "The song talks about three particular instances in which the narrator realizes \"there ain\'t no rest for the wicked.\" First, he encounters a prostitute asking if he desires to spend the night with her. The narrator proceeds to ask her why she does what she does. The chorus (her response) analyzes the main reasons why individuals follow the paths they follow "}, 
+	{title: "Back Against the Wall", description: "In the song\'s music video, the band members wage war against some gnomes. The grandmother of the Shultz brothers had several gnomes in her yard, which used to \'creep out\' Matt Shultz."}];
+
+
+//Creating Windows**
+var mainWindow = Ti.UI.createWindow({
+	title: "Songs",
+	backgroundColor: "#BDBDBD"
+});
+
+//Making Nav Window
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+//Creating Views
+
+
+//Making Tables for Header / Footer
+var songTable = Ti.UI.createTableView({
+	data: jimCroce,
+	
+});
+
+var croceSection = Ti.UI.createTableViewSection({
+});
+
+var cageSection = Ti.UI.createTableViewSection({
+
+});
+
+
+//Getting Description from Array
+var songDesc = function(){
+	var descWindow = Ti.UI.createWindow({
+		title: this.title,
+		backgroundColor: "BDBDBD",
+	});
+
+	
+	var descText = Ti.UI.createLabel({
+		text: this.desc,
+		font: {fontSize: 12, fontFamily: "Arial"},
+		left: 10,
+		right: 10
+	});
+	
+	descWindow.add(descText);
+
+	navWindow.openWindow(descWindow);
+};
+
+//Listing Songs and making them clickable
+for(var i = 0, j= jimCroce.length; i<j; i++){
+	var aRow = Ti.UI.createTableViewRow({
+		title: jimCroce[i].title,
+		desc: jimCroce[i].description,
+		hasChild: true,
+		hasDetail: true
+		
+	});
+	croceSection.add(aRow);
+	aRow.addEventListener("click", songDesc);
+};
+
+for(var i = 0, j = cageTheElephant.length;  i<j; i++){
+	var aRow = Ti.UI.createTableViewRow({
+		title: cageTheElephant[i].title,
+		desc: cageTheElephant[i].description,
+		hasChild: true,
+		hasDetail: true
+	});
+	cageSection.add(aow);
+	aRow.addEventListener("click", songDesc);
+};
+
+//Accessing information file
+//var loadFile = require("information");
+ 
+//Running all code from up top
+var songSections = [cageSection, croceSection];
+songTable.setData(songSections);
+
+console.log(barView);
+mainWindow.add(songTable);
+navWindow.open();

@@ -1,0 +1,31 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#c81b1b",
+	title: "Movie App"
+});
+
+var logo = Ti.UI.createImageView({
+	image: "Pictures/Logo.jpg",
+	top: 0
+});
+
+var welcome = Ti.UI.createView({
+	backgroundColor: "#ffcc00",
+	top: logo.top + logo.height + 300,
+	height: 50,
+	left: 35,
+	right: 35		
+});
+var welLabel = Ti.UI.createLabel({
+	align: center,
+	text: "COME ON IN!",
+	font: {fontSize: 35, fontFamily: "Times New Roman", fontAlignment: "center"}
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+navWindow.open();
+welcome.add(welLabel);
+mainWindow.add(logo, welcome);
+var loadFile = require("data");
