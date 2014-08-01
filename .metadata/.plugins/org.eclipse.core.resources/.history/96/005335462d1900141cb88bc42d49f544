@@ -198,7 +198,7 @@ var goFun = function(){
 				backgroundColor: "#007a74"
 			});
 			var namLab = Ti.UI.createLabel({
-				text: names[i],
+				text: names[e],
 				font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "left"}
 			});
 			var showName = Ti.UI.createView({
@@ -210,7 +210,7 @@ var goFun = function(){
 				right: 10
 			});
 			var adLab = Ti.UI.createLabel({
-				text: adds[i],
+				text: adds[e],
 				font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "left"}
 			});
 			var showAdd = Ti.UI.createView({
@@ -222,7 +222,7 @@ var goFun = function(){
 				right: 10
 			});
 			var addEmLab = Ti.UI.createLabel({
-				text: emAdds[i],
+				text: emAdds[e],
 				font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "left"}
 			});
 			var showEmAdd = Ti.UI.createView({
@@ -234,7 +234,7 @@ var goFun = function(){
 				right: 10
 			});
 			var fonLab = Ti.UI.createLabel({
-				text: fone[i],
+				text: fone[e],
 				font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "left"}
 			});
 			var showPhone = Ti.UI.createView({
@@ -246,7 +246,7 @@ var goFun = function(){
 				right: 10
 			});
 			var disLab = Ti.UI.createLabel({
-				text: disp[i],
+				text: disp[e],
 				font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "left"}
 			});
 			var showDisp = Ti.UI.createView({
@@ -263,7 +263,6 @@ var goFun = function(){
 			showName.add(namLab);
 			showAdd.add(adLab);
 			showEmAdd.add(addEmLab);
-			navWin.openWindow(win5);
 		}
 	}
 };
@@ -276,8 +275,10 @@ var log = function() {
 	console.log(disp[e]);
 };
 //Functions and adding
-//showName.addEventListener("click", log);
-goView.addEventListener("click", goFun);
+showName.addEventListener("click", log);
+// goView.addEventListener("click", function(e){
+	// goFun(e.source);
+// });
 searchBut.addEventListener("click", searchFun);
 win4.add(goView, namSearch);
 goView.add(goLab);
