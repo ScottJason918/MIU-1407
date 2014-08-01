@@ -1,0 +1,31 @@
+var win1 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win1
+});
+
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.jpg",
+	top: 0
+});
+
+var goBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 120,
+	height: 50,
+	width: 100,
+	backgroundColor: "feff5c"
+});
+
+var enter = Ti.UI.createLabel({
+	text: "ENTER"
+});
+
+navWin.open();
+goBut.add(enter);
+win1.add(logoView, goBut);
+
+var loadfile = require("data");
+

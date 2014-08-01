@@ -1,0 +1,44 @@
+var win2 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var secondWin = function() {
+	navWin.openWINDOW(win2);
+};
+
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.jpg",
+	top: 0
+});
+
+var searchBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 90,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 90,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addLab = Ti.UI.createLabel({
+	text: "ADD A CONTACT",
+	font: {fontSize: 35, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+
+var searchLab = Ti.UI.createLabel({
+	text: "SEARCH",
+	font: {fontSize: 35, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+win2.add(logoView);
+
+goBut.addEventListener("click", secondWin);
+

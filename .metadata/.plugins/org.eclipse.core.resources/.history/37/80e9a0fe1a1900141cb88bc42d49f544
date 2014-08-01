@@ -1,0 +1,149 @@
+//Array to store data
+var names = [];
+var adds = [];
+var emAdds= [];
+var fone = [];
+var disp = [];
+
+//Second Window
+var win2 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var secondWin = function() {
+	navWin.openWindow(win2);
+};
+//Logos and Buttons
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.jpg",
+	top: 0
+});
+
+var searchBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 90,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 38,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addLab = Ti.UI.createLabel({
+	text: "ADD A CONTACT",
+	font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+
+var searchLab = Ti.UI.createLabel({
+	text: "SEARCH",
+	font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+//Third Window
+var win3 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+//Third Window Text Fields
+var name = Ti.UI.createTextField({
+	borderRadius: 10,
+	backgroundColor: "feff5c",
+	hintText: "Enter Name",
+	height: 50,
+	top: 15,
+	left: 10,
+	right: 10
+});
+
+var address = Ti.UI.createTextField({
+	borderRadius: 10,
+	backgroundColor: "feff5c",
+	hintText: "Enter Address",
+	height: 50,
+	top: 70,
+	left: 10,
+	right: 10
+});
+
+var emailAdd = Ti.UI.createTextField({
+	borderRadius: 10,
+	backgroundColor: "feff5c",
+	hintText: "Enter Email Address",
+	height: 50,
+	top: 125,
+	left: 10,
+	right: 10
+});
+
+var phone = Ti.UI.createTextField({
+	borderRadius: 10,
+	backgroundColor: "feff5c",
+	hintText: "Enter Phone Number",
+	height: 50,
+	top: 180,
+	left: 10,
+	right: 10
+});
+
+var dispName = Ti.UI.createTextField({
+	borderRadius: 10,
+	backgroundColor: "feff5c",
+	hintText: "Enter Display Name",
+	height: 50,
+	top: 235,
+	left: 10,
+	right: 10
+});
+
+var add = function(){
+	navWin.openWindow(win3);
+};
+//Save Button with Function
+var saveBut = Ti.UI.createView({
+	borderRadius: 10,
+	top: 335,
+	height: 100,
+	left: 10,
+	right: 10,
+	backgroundColor: "#FEFF5C",	
+});
+
+var saveLab = Ti.UI.createLabel ({
+	text: "SAVE",
+	font: {fontSize: 35, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+saveBut.addEventListener('click', function(e){
+  alert('Contact Saved!');
+  var nam = names.push(name.value);
+  var fon = fone.push(phone.value);
+  var addr = adds.push(address.value);
+  var eMai = emAdds.push(emailAdd.value);
+  var dis = disp.push(dispName.value);
+  navWin.close();
+  console.log(names);
+  console.log(fone);
+  console.log(adds);
+  console.log(emAdds);
+  console.log(disp);
+});
+//Storing Entered Values
+
+
+
+//Functions and adding
+
+win2.add(logoView, searchBut, addBut);
+searchBut.add(searchLab);
+addBut.add(addLab);
+saveBut.add(saveLab);
+goBut.addEventListener("click", secondWin);
+win3.add(emailAdd, phone, dispName, address, name, saveBut);
+addBut.addEventListener("click", add);
+

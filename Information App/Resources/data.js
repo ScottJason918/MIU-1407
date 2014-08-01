@@ -41,7 +41,7 @@ var data = {
 		},
 		{
 			"name": "V for Vendetta",
-			"rating": "R (Blood and Gore, Violnece, Firearms, Partial Nudity)",
+			"rating": "R (Blood and Gore, Violence, Firearms, Partial Nudity)",
 			"average": "6.8/10",
 			"genre":"Drama/Thriller",
 			"like": "Matrix, Fight Club, Children of Men, Leon the Professional",

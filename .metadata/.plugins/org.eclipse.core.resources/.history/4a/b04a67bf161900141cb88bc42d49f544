@@ -1,0 +1,10 @@
+var win2 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.jpg",
+	top: 0
+});
+
+

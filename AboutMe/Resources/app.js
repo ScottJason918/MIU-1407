@@ -1,32 +1,12 @@
-
-//Making Nav Window
-var mainWindow = Ti.UI.createWindow({
-	title: "About Me!",
-	color: "#BDBDBD"
+Ti.UI.setBackgroundColor('white');
+var win = Ti.UI.createWindow({  
+  title: 'Click window to test',
+  backgroundColor: 'white',
+  exitOnClose: true,
+  fullscreen: false
 });
 
-var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: mainWindow
+win.addEventListener('click', function(e){
+  alert('The file has been deleted');
 });
-
-
-var button = Ti.UI.createView({
-	backgroundColor: "#ffffff",
-	top: 20,
-	height: "50%",
-	width: "80%",
-	align: "center"
-});
-
-var buttonLabel = Ti.UI.createLabel({
-	text: "Click Me!"
-});
-
-var loadfile = require("json");
-
-
-button.add(buttonLabel);
-mainWindow.add(button);
-navWindow.open();
-
-
+win.open();

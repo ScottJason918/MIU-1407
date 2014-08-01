@@ -1,4 +1,3 @@
-var margin = 5;
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#c81b1b",
 	title: "Movie App"
@@ -14,7 +13,7 @@ var welBut = Ti.UI.createView({
 	top: 240,
 	height: 50,
 	left: 35,
-	right: 35		
+	right: 35
 });
 var welLabel = Ti.UI.createLabel({
 	top: 5,

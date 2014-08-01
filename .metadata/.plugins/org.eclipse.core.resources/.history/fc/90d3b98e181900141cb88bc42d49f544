@@ -1,0 +1,104 @@
+//Second Window
+var win2 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var secondWin = function() {
+	navWin.openWindow(win2);
+};
+//Logos and Buttons
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.jpg",
+	top: 0
+});
+
+var searchBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 90,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addBut = Ti.UI.createView({
+	borderRadius: 10,
+	bottom: 38,
+	height: 50,
+	width: 250,
+	backgroundColor: "feff5c"
+});
+
+var addLab = Ti.UI.createLabel({
+	text: "ADD A CONTACT",
+	font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+
+var searchLab = Ti.UI.createLabel({
+	text: "SEARCH",
+	font: {fontSize: 15, fontFamily: "Perpetua", fontAlignment: "center"}
+});
+
+//Third Window
+var win3 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+//Third Window Text Fields
+var name = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Name",
+	height: 50,
+	top: 15,
+	left: 10,
+	right: 10
+});
+
+var address = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Address",
+	height: 50,
+	top: 70,
+	left: 10,
+	right: 10
+});
+
+var emailAdd = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Email Address",
+	height: 50,
+	top: 90,
+	left: 10,
+	right: 10
+});
+
+var phone = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Phone Number",
+	height: 50,
+	top: 110,
+	left: 10,
+	right: 10
+});
+
+var dispName = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Display Name",
+	height: 50,
+	top: 130,
+	left: 10,
+	right: 10
+});
+
+var add = function(){
+	navWin.openWindow(win3);
+};
+
+
+//Functions and adding
+win2.add(logoView, searchBut, addBut);
+searchBut.add(searchLab);
+addBut.add(addLab);
+goBut.addEventListener("click", secondWin);
+win3.add(emailAdd, phone, dispName, address, name);
+addBut.addEventListener("click", add);
+

@@ -1,0 +1,18 @@
+var win1 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win1
+});
+
+var logoView = Ti.UI.createImageView({
+	image: "Pictures/AddLogo.ai",
+	top: 0
+});
+
+navWin.open();
+win1.add(logoView);
+
+var loadfile = require("data");
+

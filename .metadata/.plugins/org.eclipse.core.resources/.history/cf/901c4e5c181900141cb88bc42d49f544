@@ -1,0 +1,56 @@
+var win3 = Ti.UI.createWindow({
+	backgroundColor: "#007a74"
+});
+
+var name = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Name",
+	height: 50,
+	top: 15,
+	left: 10,
+	right: 10
+});
+
+var address = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Address",
+	height: 50,
+	top: 70,
+	left: 10,
+	right: 10
+});
+
+var emailAdd = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Email Address",
+	height: 50,
+	top: 90,
+	left: 10,
+	right: 10
+});
+
+var phone = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Phone Number",
+	height: 50,
+	top: 110,
+	left: 10,
+	right: 10
+});
+
+var dispName = Ti.UI.createTextField({
+	borderRadius: 10,
+	hint: "Enter Display Name",
+	height: 50,
+	top: 130,
+	left: 10,
+	right: 10
+});
+
+var add = function(){
+	navWin.openWindow(win3);
+};
+
+win3.add*(emailAdd, phone, dispName, address, name);
+
+addBut.addEventListener("click", add);
